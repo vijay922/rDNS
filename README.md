@@ -25,11 +25,8 @@ go build -o rdns rdns.go
 
 ### Method 2: Quick Run
 ```bash
-git clone https://github.com/vijay922/rDNS.git
-cd rDNS
-go mod init rdns
-go get github.com/jessevdk/go-flags
-go run rdns.go [options]
+go install github.com/vijay922/rdns@latest
+
 ```
 
 ## Usage
@@ -37,29 +34,29 @@ go run rdns.go [options]
 ### Basic Usage
 ```bash
 # Resolve IPs from file using default resolvers
-./rdns -l iprange.txt -U
+rdns -l iprange.txt -U
 
 # High-performance bulk resolution
-./rdns -l iprange.txt -t 5000 -U -v
+rdns -l iprange.txt -t 5000 -U -v
 
 # Pipe single IP or CIDR
-echo "8.8.8.8" | ./rdns -U
-echo "192.168.1.0/24" | ./rdns -U -t 1000
+echo "8.8.8.8" | rdns -U
+echo "192.168.1.0/24" | rdns -U -t 1000
 ```
 
 ### Advanced Usage
 ```bash
 # Save results to file with progress
-./rdns -l iprange.txt -t 5000 -U -v -o results.txt
+rdns -l iprange.txt -t 5000 -U -v -o results.txt
 
 # Use custom DNS resolver with TCP
-./rdns -l iprange.txt -r 1.1.1.1 -P tcp -t 2000
+rdns -l iprange.txt -r 1.1.1.1 -P tcp -t 2000
 
 # Show only domain names, include failed IPs
-./rdns -l iprange.txt -U -d -f -t 3000
+rdns -l iprange.txt -U -d -f -t 3000
 
 # Rate limited with custom timeout and retries
-./rdns -l iprange.txt -U -t 5000 -L 1000 -T 5 -y 3 -v
+rdns -l iprange.txt -U -t 5000 -L 1000 -T 5 -y 3 -v
 ```
 
 ## Command Line Options
@@ -136,13 +133,13 @@ echo "* hard nofile 65536" >> /etc/security/limits.conf
 ### Optimal Settings
 ```bash
 # Fast scanning (recommended for most use cases)
-./rdns -l iprange.txt -t 2000 -U -v -L 5000
+rdns -l iprange.txt -t 2000 -U -v -L 5000
 
 # Maximum performance (use with caution)
-./rdns -l iprange.txt -t 5000 -U -v -T 1 -y 1
+rdns -l iprange.txt -t 5000 -U -v -T 1 -y 1
 
 # Conservative (for slower networks)
-./rdns -l iprange.txt -t 500 -U -v -T 5 -y 2 -L 1000
+rdns -l iprange.txt -t 500 -U -v -T 5 -y 2 -L 1000
 ```
 
 ## Output Examples
@@ -176,13 +173,13 @@ resolver1.opendns.com
 echo "203.0.113.0/24" | ./rdns -U -t 1000 -v
 
 # Bulk process multiple CIDR ranges
-./rdns -l networks.txt -U -t 3000 -v -o resolved_hosts.txt
+rdns -l networks.txt -U -t 3000 -v -o resolved_hosts.txt
 ```
 
 ### Security Research
 ```bash
 # Find live hosts with reverse DNS
-./rdns -l target_ranges.txt -U -t 5000 -d -v -o domains.txt
+rdns -l target_ranges.txt -U -t 5000 -d -v -o domains.txt
 
 # Check specific organization's IP space
 echo "8.8.8.0/24" | ./rdns -U -t 500 -v
@@ -191,10 +188,10 @@ echo "8.8.8.0/24" | ./rdns -U -t 500 -v
 ### Infrastructure Mapping
 ```bash
 # Map cloud provider IP ranges
-./rdns -l aws_ranges.txt -U -t 2000 -v -o aws_hosts.txt
+rdns -l aws_ranges.txt -U -t 2000 -v -o aws_hosts.txt
 
 # Include failed resolutions for complete mapping
-./rdns -l datacenter_ips.txt -U -t 1000 -f -o complete_scan.txt
+rdns -l datacenter_ips.txt -U -t 1000 -f -o complete_scan.txt
 ```
 
 ## Troubleshooting
@@ -209,19 +206,19 @@ ulimit -n 65536
 **2. DNS queries timing out**
 ```bash
 # Increase timeout and retries
-./rdns -l iprange.txt -U -T 5 -y 3
+rdns -l iprange.txt -U -T 5 -y 3
 ```
 
 **3. Rate limiting by DNS servers**
 ```bash
 # Add rate limiting
-./rdns -l iprange.txt -U -L 1000
+rdns -l iprange.txt -U -L 1000
 ```
 
 **4. No results**
 ```bash
 # Check with verbose output
-./rdns -l iprange.txt -U -v -f
+rdns -l iprange.txt -U -v -f
 ```
 
 ### Performance Issues
