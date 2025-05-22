@@ -247,3 +247,25 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Disclaimer
 
 This tool is intended for legitimate network administration, security research, and authorized penetration testing. Users are responsible for ensuring they have proper authorization before scanning networks they do not own.
+
+<h2 id="donate" align="center">⚡️ Support</h2>
+
+<details>
+<summary>☕ Buy Me A Coffee</summary>
+
+<p align="center">
+  <a href="https://buymeacoffee.com/vijay922">
+    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black"/>
+  </a>
+</p>
+
+</details>
+
+<p align="center">
+  <b><i>"Keep pushing forward. Never surrender."</i></b>
+</p>
+
+<p align="center">🌱</p>
+
+## Author
+[chippa vijay kumar](https://github.com/vijay922)
