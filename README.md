@@ -2,6 +2,8 @@
 
 A high-performance, concurrent reverse DNS lookup tool written in Go. Efficiently resolves IP addresses and CIDR ranges to domain names using multiple DNS resolvers and thousands of concurrent threads.
 
+<img src="https://github.com/vijay922/GoXSScanner/blob/main/Logo.png?raw=true" alt="GoXSScanner" width="600"/>
+
 ## Features
 
 - 🚀 **High Concurrency**: Support for up to 10,000 concurrent threads
