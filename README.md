@@ -14,16 +14,7 @@ A high-performance, concurrent reverse DNS lookup tool written in Go. Efficientl
 
 ## Installation
 
-### Method 1: Build from Source
-```bash
-git clone https://github.com/vijay922/rDNS.git
-cd rDNS
-go mod init rdns
-go get github.com/jessevdk/go-flags
-go build -o rdns rdns.go
-```
-
-### Method 2: Quick Run
+### Quick Run
 ```bash
 go install github.com/vijay922/rdns@latest
 
