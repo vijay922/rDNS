@@ -242,7 +242,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 - Built with [go-flags](https://github.com/jessevdk/go-flags) for command-line parsing
-- Inspired by the need for high-performance network reconnaissance tools
+- Inspired by the need for high-performance network reconnaissance tools and **Hakrevdns**
 
 ## Disclaimer
 
